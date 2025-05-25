@@ -7,10 +7,10 @@ public class PlayerStateMachine
     public Idle idleState;
     public Moving movingState;
 
-    public PlayerStateMachine(CharacterController controller,PlayerInput input,Animator animator,int idle,int move)
+    public PlayerStateMachine(CharacterController controller,PlayerInput input,Animator animator,int idle,int move,Player player)
     {
         idleState = new Idle(this, input,animator,idle);
-        movingState = new Moving(this, controller,input,animator,move);
+        movingState = new Moving(this, controller,input,animator,move,player);
         Initialize();
     }
 
