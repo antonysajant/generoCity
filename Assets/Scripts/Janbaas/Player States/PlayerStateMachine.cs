@@ -13,8 +13,8 @@ public class PlayerStateMachine
     {
         idleState = new Idle(this, movement,input,animator,idle,player);
         movingState = new Moving(this, movement,input,animator,move,speed,player);
-        jumpingState = new Jump(this, movement, input, animator, jump, 5f, player,speed);
-        fallingState = new Falling(this, movement, input, animator, fall, 5f, player, speed);
+        jumpingState = new Jump(this, movement, input, animator, jump, player,speed);
+        fallingState = new Falling(this, movement, input, animator, fall, player, speed);
         Initialize();
     }
 

@@ -47,6 +47,7 @@ public class Moving : PlayerStates
             _stateMachine.SwitchState(_stateMachine.jumpingState);
             return;
         }
+        if(!_movement.IsGrounded())
         _movement.Move(_playerInput.MoveInput, _speed, false);
     }
 }

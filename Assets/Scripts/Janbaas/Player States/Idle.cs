@@ -45,5 +45,10 @@ public class Idle : PlayerStates
             _stateMachine.SwitchState(_stateMachine.jumpingState);
             return;
         }
+        if (!_movement.IsGrounded())
+        {
+            _stateMachine.SwitchState(_stateMachine.fallingState);
+            return;
+        }
     }
 }
