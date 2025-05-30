@@ -7,13 +7,15 @@ public class Idle : PlayerStates
     private Animator _animator;
     int _idleHash;
     private Player _player;
-    public Idle(PlayerStateMachine stateMachine, PlayerInput _playerInput, Animator animator, int idleHash,Player player)
+    private CharacterMovement _movement;
+    public Idle(PlayerStateMachine stateMachine, CharacterMovement movement,PlayerInput _playerInput, Animator animator, int idleHash,Player player)
     {
         _stateMachine = stateMachine;
         this._playerInput = _playerInput;
         _animator = animator;
         _idleHash = idleHash;
         _player = player;
+        _movement = movement;
     }
     public override void EnterState()
     {
@@ -38,7 +40,7 @@ public class Idle : PlayerStates
             _stateMachine.SwitchState(_stateMachine.movingState);
             return;
         }
-        if (_playerInput.JumpInput)
+        if (_playerInput.JumpInput && _movement.IsGrounded())
         {
             _stateMachine.SwitchState(_stateMachine.jumpingState);
             return;

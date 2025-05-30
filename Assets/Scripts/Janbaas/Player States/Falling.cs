@@ -1,34 +1,33 @@
 using UnityEngine;
 
-public class Jump : PlayerStates
+public class Falling : PlayerStates
 {
     private PlayerStateMachine _stateMachine;
     private CharacterMovement _movement;
     private PlayerInput _playerInput;
     private Animator _animator;
-    private int _jumpHash;
+    private int _fallHash;
     private Player _player;
     private float _speed;
-    public Jump(PlayerStateMachine stateMachine, CharacterMovement movement, PlayerInput playerInput, Animator animator, int jumpHash,Player player,float speed)
+    public Falling(PlayerStateMachine stateMachine,CharacterMovement movement, PlayerInput input,Animator animator,int fallHash,Player player,float speed)
     {
         _stateMachine = stateMachine;
         _movement = movement;
-        _playerInput = playerInput;
+        _playerInput = input;
         _animator = animator;
-        _jumpHash = jumpHash;
+        _fallHash = fallHash;
         _player = player;
         _speed = speed;
     }
-
     public override void EnterState()
     {
-        Debug.Log("Entering JumpState");
-        _movement.Move(_playerInput.MoveInput, _speed, true);
+        Debug.Log("Entering Falling State");
+
     }
 
     public override void ExitState()
     {
-        Debug.Log("Exiting JumpState");
+        
     }
 
     public override void FixedUpdate()
@@ -38,9 +37,10 @@ public class Jump : PlayerStates
 
     public override void Update()
     {
-        if (_movement.GetVelocity().y < 0f)
+        if (_movement.IsGrounded())
         {
-            _stateMachine.SwitchState(_stateMachine.fallingState);
+            _stateMachine.SwitchState(_stateMachine.idleState);
+            return;
         }
         _movement.Move(_playerInput.MoveInput, _speed, false);
     }

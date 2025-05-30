@@ -35,4 +35,8 @@ public class CharacterMovement : MonoBehaviour
     {
         return _controller.isGrounded;
     }
+    public Vector3 GetVelocity()
+    {
+        return _controller.velocity;
+    }
 }

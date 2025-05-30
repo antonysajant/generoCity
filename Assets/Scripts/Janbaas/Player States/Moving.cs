@@ -42,7 +42,7 @@ public class Moving : PlayerStates
             _stateMachine.SwitchState(_stateMachine.idleState);
             return;
         }
-        if (_playerInput.JumpInput)
+        if (_playerInput.JumpInput && _movement.IsGrounded())
         {
             _stateMachine.SwitchState(_stateMachine.jumpingState);
             return;
