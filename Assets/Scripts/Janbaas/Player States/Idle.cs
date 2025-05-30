@@ -6,12 +6,14 @@ public class Idle : PlayerStates
     private PlayerInput _playerInput;
     private Animator _animator;
     int _idleHash;
-    public Idle(PlayerStateMachine stateMachine, PlayerInput _playerInput, Animator animator, int idleHash)
+    private Player _player;
+    public Idle(PlayerStateMachine stateMachine, PlayerInput _playerInput, Animator animator, int idleHash,Player player)
     {
         _stateMachine = stateMachine;
         this._playerInput = _playerInput;
         _animator = animator;
         _idleHash = idleHash;
+        _player = player;
     }
     public override void EnterState()
     {
@@ -34,6 +36,11 @@ public class Idle : PlayerStates
         if (_playerInput.MoveInput != Vector2.zero)
         {
             _stateMachine.SwitchState(_stateMachine.movingState);
+            return;
+        }
+        if (_playerInput.JumpInput)
+        {
+            _stateMachine.SwitchState(_stateMachine.jumpingState);
             return;
         }
     }

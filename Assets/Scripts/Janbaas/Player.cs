@@ -6,12 +6,14 @@ public class Player : MonoBehaviour
     PlayerStateMachine _playerStateMachine;
     int idle = Animator.StringToHash("Idle");
     int move = Animator.StringToHash("Walk");
+    int jump = Animator.StringToHash("Jump");
+    [SerializeField] float speed = 5f;
 
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _playerInput.Awake();
-        _playerStateMachine = new PlayerStateMachine(GetComponent<CharacterController>(), _playerInput, GetComponent<Animator>(),idle,move);
+        _playerStateMachine = new PlayerStateMachine(GetComponent<CharacterMovement>(), _playerInput, GetComponent<Animator>(),idle,move,jump,speed,this);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -4,13 +4,15 @@ public class PlayerStateMachine
 {
     public PlayerStates CurrentState { get; private set; }
 
-    public Idle idleState;
-    public Moving movingState;
+    public Idle idleState { get; private set; }
+    public Moving movingState { get; private set; }
+    public Jump jumpingState { get; private set; }
 
-    public PlayerStateMachine(CharacterController controller,PlayerInput input,Animator animator,int idle,int move)
+    public PlayerStateMachine(CharacterMovement movement,PlayerInput input,Animator animator,int idle,int move,int jump,float speed,Player player)
     {
-        idleState = new Idle(this, input,animator,idle);
-        movingState = new Moving(this, controller,input,animator,move);
+        idleState = new Idle(this, input,animator,idle,player);
+        movingState = new Moving(this, movement,input,animator,move,speed,player);
+        jumpingState = new Jump(this, movement, input, animator, jump, 5f, player,speed);
         Initialize();
     }
 
