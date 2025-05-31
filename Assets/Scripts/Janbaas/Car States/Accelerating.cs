@@ -10,8 +10,9 @@ public class Accelerating : States
     private Rigidbody rb;
     private float velocity;
     private float rayDistFront;
+    private LayerMask _intersectionMask;
 
-    public Accelerating(CarStateMachine stateMachine,Vehicles vehicle, float accel, float maxSpeed, float rotRatio, Rigidbody rb,float rayDistFront)
+    public Accelerating(CarStateMachine stateMachine,Vehicles vehicle, float accel, float maxSpeed, float rotRatio, Rigidbody rb,float rayDistFront,LayerMask _intersectionMask)
     {
         this.vehicle = vehicle;
         this.accel = accel;
@@ -20,6 +21,7 @@ public class Accelerating : States
         this.rb = rb;
         this.rayDistFront = rayDistFront;
         this.stateMachine = stateMachine;
+        this._intersectionMask = _intersectionMask;
     }
 
     public override void EnterState()
@@ -40,14 +42,16 @@ public class Accelerating : States
 
     public override void Update()
     {
-        var hit = Physics.Raycast(vehicle.transform.position, vehicle.transform.forward,out RaycastHit rayHit ,rayDistFront);
-        if(rayHit.collider.gameObject.TryGetComponent<Intersection>(out Intersection inter))
-        {
-            stateMachine.ChangeState(stateMachine.intersectingState);
-            return;
-        }
+        var hit = Physics.Raycast(vehicle.transform.position, vehicle.transform.forward,out RaycastHit rayHit, rayDistFront, _intersectionMask );
+
+        
         if (hit)
         {
+            if (rayHit.collider.CompareTag("Intersection"))
+            {
+                stateMachine.ChangeState(stateMachine.intersectingState);
+                return;
+            }
             stateMachine.ChangeState(stateMachine.parkState);
             return;
         }

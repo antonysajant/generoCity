@@ -4,12 +4,17 @@ using UnityEngine;
 public class Intersection : MonoBehaviour
 {
     Array directions = Enum.GetValues(typeof(IntersectionDirection));
-    [SerializeField] IntersectionType intersectionType = IntersectionType.Way3;
+    [SerializeField] IntersectionType _intersectionType = IntersectionType.Way3;
+    public IntersectionType intersectionType
+    {
+        get => _intersectionType;
+        set => _intersectionType = value;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public IntersectionDirection GetDirection(IntersectionType inter)
+    public IntersectionDirection GetDirection()
     {
         int index = 0;
-        switch (inter)
+        switch (intersectionType)
         {
             case IntersectionType.Way3:
                 index = UnityEngine.Random.Range(0, 3);

@@ -9,4 +9,9 @@ public static class Mathematics
         velocity = currentVelocity + acceleration * Time.deltaTime;
         return velocity;
     } 
+    public static float RotationCalculator(float currentRotation, float targetRotation, float rotationRatio)
+    {
+        float rotation = Mathf.LerpAngle(currentRotation, targetRotation, rotationRatio * Time.deltaTime);
+        return rotation;
+    }
 }

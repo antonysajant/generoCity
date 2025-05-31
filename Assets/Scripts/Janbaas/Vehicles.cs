@@ -16,11 +16,12 @@ public class Vehicles : MonoBehaviour
     [SerializeField]private Transform rotateAroundLeft;
     [SerializeField] private Transform rotateAroundRight;
     [SerializeField] private Transform rotateAroundUTurn;
+    [SerializeField] private LayerMask intersectionLayers;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        stateMachine = new CarStateMachine(this,acceleration,maxSpeed,maxBackwardSpeed,rotationRatio,rb,rayDistFront,rayDistBack);
+        stateMachine = new CarStateMachine(this,acceleration,maxSpeed,maxBackwardSpeed,rotationRatio,rb,rayDistFront,rayDistBack,intersectionLayers);
     }
 
     private void Update()
