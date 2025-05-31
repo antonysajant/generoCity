@@ -12,10 +12,10 @@ public class CarStateMachine
 
     public CarStateMachine(Vehicles vehicle, float accel, float maxSpeed, float maxReverseSpeed, float rotRatio, Rigidbody rb, float rayDistfront, float rayDistBack,LayerMask intersectionMask)
     {
-        acceleratingState = new Accelerating(this,vehicle, accel, maxSpeed, rotRatio, rb,rayDistfront,intersectionMask);
+        acceleratingState = new Accelerating(this,vehicle, accel, maxSpeed, rb,rayDistfront,intersectionMask);
         reverseState = new Reverse(vehicle, maxReverseSpeed, rotRatio, rb);
         parkState = new Park(this,vehicle, rb,rayDistfront);
-        intersectingState = new Intersecting(this, vehicle, rotRatio,maxSpeed,rb,rayDistfront,accel);
+        intersectingState = new Intersecting(this, vehicle,maxSpeed,rb,rayDistfront,accel,intersectionMask);
         Initialize();
     }
     private void Initialize()

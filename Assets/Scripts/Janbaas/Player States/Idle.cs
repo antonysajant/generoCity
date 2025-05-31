@@ -19,13 +19,11 @@ public class Idle : States
     }
     public override void EnterState()
     {
-        Debug.Log("Entering Idle");
         _animator.CrossFade(_idleHash, 0.2f);
     }
 
     public override void ExitState()
     {
-        Debug.Log("Exiting Idle");
     }
 
     public override void FixedUpdate()

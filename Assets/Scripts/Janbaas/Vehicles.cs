@@ -17,6 +17,9 @@ public class Vehicles : MonoBehaviour
     [SerializeField] private Transform rotateAroundRight;
     [SerializeField] private Transform rotateAroundUTurn;
     [SerializeField] private LayerMask intersectionLayers;
+    public Transform RotateAroundLeft { get => rotateAroundLeft; set => rotateAroundLeft = value; }
+    public Transform RotateAroundRight { get => rotateAroundRight; set => rotateAroundRight = value; }
+    public Transform RotateAroundUTurn { get => rotateAroundUTurn; set => rotateAroundUTurn = value; }
 
     void Start()
     {
