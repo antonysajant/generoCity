@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Jump : PlayerStates
+public class Jump : States
 {
     private PlayerStateMachine _stateMachine;
     private CharacterMovement _movement;
@@ -24,6 +24,7 @@ public class Jump : PlayerStates
     {
         Debug.Log("Entering JumpState");
         _movement.Move(_playerInput.MoveInput, _speed, true);
+        _playerInput.JumpInput = false;
     }
 
     public override void ExitState()
@@ -41,6 +42,7 @@ public class Jump : PlayerStates
         if (_movement.GetVelocity().y < 0f)
         {
             _stateMachine.SwitchState(_stateMachine.fallingState);
+            return;
         }
         _movement.Move(_playerInput.MoveInput, _speed, false);
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Falling : PlayerStates
+public class Falling : States
 {
     private PlayerStateMachine _stateMachine;
     private CharacterMovement _movement;

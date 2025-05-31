@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     int jump = Animator.StringToHash("Jump");
     int fall = Animator.StringToHash("Fall");
     private CharacterMovement _characterMovement;
+    [SerializeField] Animator animator;
     [SerializeField] float speed = 5f;
 
     private void Awake()
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
         _characterMovement = GetComponent<CharacterMovement>();
         _playerInput = new PlayerInput();
         _playerInput.Awake();
-        _playerStateMachine = new PlayerStateMachine(_characterMovement, _playerInput, GetComponent<Animator>(),idle,move,jump,fall,speed,this);
+        _playerStateMachine = new PlayerStateMachine(_characterMovement, _playerInput, animator,idle,move,jump,fall,speed,this);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

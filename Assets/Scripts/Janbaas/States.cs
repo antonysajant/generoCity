@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class PlayerStates
+public abstract class States
 {
     abstract public void EnterState();
     abstract public void Update();

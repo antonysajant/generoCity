@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerStateMachine
 {
-    public PlayerStates CurrentState { get; private set; }
+    public States CurrentState { get; private set; }
 
     public Idle idleState { get; private set; }
     public Moving movingState { get; private set; }
@@ -27,7 +27,7 @@ public class PlayerStateMachine
     {
         CurrentState.Update();
     }
-    public void SwitchState(PlayerStates newState)
+    public void SwitchState(States newState)
     {
         CurrentState.ExitState();
         CurrentState = newState;

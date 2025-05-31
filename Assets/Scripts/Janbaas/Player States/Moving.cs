@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Moving : PlayerStates
+public class Moving : States
 {
     private PlayerStateMachine _stateMachine;
     private CharacterMovement _movement;
@@ -47,7 +47,11 @@ public class Moving : PlayerStates
             _stateMachine.SwitchState(_stateMachine.jumpingState);
             return;
         }
-        if(!_movement.IsGrounded())
+        if (!_movement.IsGrounded())
+        {
+            _stateMachine.SwitchState(_stateMachine.fallingState);
+            return;
+        }
         _movement.Move(_playerInput.MoveInput, _speed, false);
     }
 }

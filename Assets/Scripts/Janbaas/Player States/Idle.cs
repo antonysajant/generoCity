@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Idle : PlayerStates
+public class Idle : States
 {
     private PlayerStateMachine _stateMachine;
     private PlayerInput _playerInput;
