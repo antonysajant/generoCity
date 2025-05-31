@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Road
   - Ground
+  - Intersection
   layers:
   - Default
   - TransparentFX
