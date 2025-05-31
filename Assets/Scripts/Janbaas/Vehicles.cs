@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Vehicles : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class Vehicles : MonoBehaviour
     [SerializeField] float maxBackwardSpeed = 5f;
     [SerializeField] float rayDistBack = 5f;
     private Rigidbody rb;
+
+    [Header("Rotate Around")]
+    [SerializeField]private Transform rotateAroundLeft;
+    [SerializeField] private Transform rotateAroundRight;
+    [SerializeField] private Transform rotateAroundUTurn;
 
     void Start()
     {

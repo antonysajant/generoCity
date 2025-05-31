@@ -40,10 +40,16 @@ public class Accelerating : States
 
     public override void Update()
     {
-        var hit = Physics.Raycast(vehicle.transform.position, vehicle.transform.forward, rayDistFront);
+        var hit = Physics.Raycast(vehicle.transform.position, vehicle.transform.forward,out RaycastHit rayHit ,rayDistFront);
+        if(rayHit.collider.gameObject.TryGetComponent<Intersection>(out Intersection inter))
+        {
+            stateMachine.ChangeState(stateMachine.intersectingState);
+            return;
+        }
         if (hit)
         {
             stateMachine.ChangeState(stateMachine.parkState);
+            return;
         }
     }
 }

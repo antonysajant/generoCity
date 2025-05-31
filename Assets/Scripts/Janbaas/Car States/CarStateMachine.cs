@@ -6,6 +6,7 @@ public class CarStateMachine
     public States currentState { get; private set; }
     public States acceleratingState { get; private set; }
     public States reverseState { get; private set; }
+    public States intersectingState { get; private set; }
 
     public States parkState { get; private set; }
 
@@ -14,6 +15,7 @@ public class CarStateMachine
         acceleratingState = new Accelerating(this,vehicle, accel, maxSpeed, rotRatio, rb,rayDistfront);
         reverseState = new Reverse(vehicle, maxReverseSpeed, rotRatio, rb);
         parkState = new Park(this,vehicle, rb,rayDistfront);
+        intersectingState = new Intersecting(this, vehicle, rotRatio,maxSpeed,rb);
         Initialize();
     }
     private void Initialize()
