@@ -232,28 +232,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1688474696}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3b1887dcef03e844f93a3362450beaf6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b1887dcef03e844f93a3362450beaf6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b1887dcef03e844f93a3362450beaf6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b1887dcef03e844f93a3362450beaf6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6340024
+      value: -2.6340027
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b1887dcef03e844f93a3362450beaf6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.025844
+      value: -5.0258446
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b1887dcef03e844f93a3362450beaf6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5140685
+      value: 1.5140686
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b1887dcef03e844f93a3362450beaf6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2693,12 +2681,12 @@ Transform:
   - {fileID: 2091214541}
   - {fileID: 712053532}
   - {fileID: 2033832514}
+  - {fileID: 137858939}
   - {fileID: 1599158908}
   - {fileID: 1664484793}
   - {fileID: 1801671583}
   - {fileID: 575586293}
   - {fileID: 1356697822}
-  - {fileID: 137858939}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1694410475
@@ -3495,8 +3483,13 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
+<<<<<<< HEAD
   m_Size: {x: 5.5083923, y: 1, z: 1.642273}
   m_Center: {x: -0.047073364, y: 0, z: -3.0186768}
+=======
+  m_Size: {x: 7.394928, y: 1, z: 7.3623657}
+  m_Center: {x: 0.36906433, y: 0, z: -0.018676758}
+>>>>>>> parent of 79bc7a7 (Very close to haveing the car ai)
 --- !u!4 &2071513130
 Transform:
   m_ObjectHideFlags: 0
@@ -3527,10 +3520,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa9dda9d4d0a664788322dd6665b937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _intersectionType: 1
   Left: {fileID: 2144656349}
   Right: {fileID: 1857990644}
   Backward: {fileID: 2042942765}
+=======
+  _intersectionType: 0
+>>>>>>> parent of 79bc7a7 (Very close to haveing the car ai)
 --- !u!1001 &2091214540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3898,7 +3895,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 175161988039763045, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 341.12
+      value: 341.39764
       objectReference: {fileID: 0}
     - target: {fileID: 175161988039763045, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3906,7 +3903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 175161988039763045, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 310.43
+      value: 311.42844
       objectReference: {fileID: 0}
     - target: {fileID: 175161988039763045, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3936,14 +3933,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 354696588641162767, guid: 351654b9de66528438249ceb467f1275, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.9
-      objectReference: {fileID: 0}
     - target: {fileID: 659104766180376287, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: m_Name
       value: Sports Car
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 3412088144343058524, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1
@@ -3964,6 +3958,8 @@ PrefabInstance:
       propertyPath: intersectionTime
       value: 1.5
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 79bc7a7 (Very close to haveing the car ai)
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

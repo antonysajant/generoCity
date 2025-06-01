@@ -41,7 +41,7 @@ public class Intersection : MonoBehaviour
                 index = UnityEngine.Random.Range(0, 4);
                 break;
             case IntersectionType.UTurn:
-                index = 3; 
+                index = 3; // U-turn is always backward
                 break;
 
         }
