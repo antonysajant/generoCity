@@ -3484,8 +3484,13 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 5.5083923, y: 1, z: 1.642273}
   m_Center: {x: -0.047073364, y: 0, z: -3.0186768}
+=======
+  m_Size: {x: 7.394928, y: 1, z: 7.3623657}
+  m_Center: {x: 0.36906433, y: 0, z: -0.018676758}
+>>>>>>> parent of 79bc7a7 (Very close to haveing the car ai)
 =======
   m_Size: {x: 7.394928, y: 1, z: 7.3623657}
   m_Center: {x: 0.36906433, y: 0, z: -0.018676758}
@@ -3521,10 +3526,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   _intersectionType: 1
   Left: {fileID: 2144656349}
   Right: {fileID: 1857990644}
   Backward: {fileID: 2042942765}
+=======
+  _intersectionType: 0
+>>>>>>> parent of 79bc7a7 (Very close to haveing the car ai)
 =======
   _intersectionType: 0
 >>>>>>> parent of 79bc7a7 (Very close to haveing the car ai)
@@ -3938,6 +3947,7 @@ PrefabInstance:
       value: Sports Car
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 3412088144343058524, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1
@@ -3958,6 +3968,8 @@ PrefabInstance:
       propertyPath: intersectionTime
       value: 1.5
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 79bc7a7 (Very close to haveing the car ai)
 =======
 >>>>>>> parent of 79bc7a7 (Very close to haveing the car ai)
     m_RemovedComponents: []
