@@ -22,14 +22,12 @@ public class Jump : States
 
     public override void EnterState()
     {
-        Debug.Log("Entering JumpState");
         _movement.Move(_playerInput.MoveInput, _speed, true);
         _playerInput.JumpInput = false;
     }
 
     public override void ExitState()
     {
-        Debug.Log("Exiting JumpState");
     }
 
     public override void FixedUpdate()

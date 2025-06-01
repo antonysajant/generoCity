@@ -21,7 +21,7 @@ public class Falling : States
     }
     public override void EnterState()
     {
-        Debug.Log("Entering Falling State");
+
 
     }
 

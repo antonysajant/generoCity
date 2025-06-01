@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4713150292523605460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.88, y: 0, z: 0}
+  m_LocalPosition: {x: 0.88, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 7409116833275491768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.31, y: 0, z: 0}
+  m_LocalPosition: {x: -2.31, y: 0, z: 0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 9051304932288145055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.82, y: 0, z: 0}
+  m_LocalPosition: {x: 3.82, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -103,7 +103,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f4a2c40d211d76f47bbc576a181d8822, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 341.39764
+      value: 341.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4a2c40d211d76f47bbc576a181d8822, type: 3}
       propertyPath: m_LocalPosition.y
@@ -111,7 +111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4a2c40d211d76f47bbc576a181d8822, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 311.42844
+      value: 310.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4a2c40d211d76f47bbc576a181d8822, type: 3}
       propertyPath: m_LocalRotation.w
@@ -240,10 +240,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 10
   maxSpeed: 20
-  rotationRatio: 0.1
-  rayDistFront: 2.7
+  rotationRatio: 20
+  rayDistFront: 1.91
   maxBackwardSpeed: 5
   rayDistBack: 2.48
+  intersectionTime: 2
+  nextIntersectionTime: 0
+  direction: 0
   rotateAroundLeft: {fileID: 354696588641162767}
   rotateAroundRight: {fileID: 3412088144343058524}
   rotateAroundUTurn: {fileID: 4621111590568586738}

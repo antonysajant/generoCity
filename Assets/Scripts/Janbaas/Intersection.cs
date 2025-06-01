@@ -10,6 +10,24 @@ public class Intersection : MonoBehaviour
         get => _intersectionType;
         set => _intersectionType = value;
     }
+    [SerializeField] private Transform Left;
+    [SerializeField] private Transform Right;
+    [SerializeField] private Transform Backward;
+    public Transform left
+    {
+        get => Left;
+        set => Left = value;
+    }
+    public Transform right
+    {
+        get => Right;
+        set => Right = value;
+    }
+    public Transform backward
+    {
+        get => Backward;
+        set => Backward = value;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public IntersectionDirection GetDirection()
     {

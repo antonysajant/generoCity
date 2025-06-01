@@ -21,7 +21,6 @@ public class Moving : States
     }
     public override void EnterState()
     {
-        Debug.Log("Entering MoveState");
         _animator.CrossFade(_moveHash, 0.2f);
     }
 

@@ -10,4 +10,16 @@ public static class Mathematics
         velocity = currentVelocity + acceleration * Time.deltaTime;
         return velocity;
     } 
+    public static float ClosestMultiple(float value,float roundTo)
+    {
+        if (roundTo == 0)
+            return value;
+        float remainder = value % roundTo;
+        if (remainder < 0)
+            remainder += roundTo;
+        if (remainder < roundTo / 2)
+            return value - remainder;
+        else
+            return value + (roundTo - remainder);
+    }
 }
