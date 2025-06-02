@@ -33,8 +33,6 @@ public class Vehicles : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         stateMachine = new CarStateMachine(this,acceleration,maxSpeed,maxBackwardSpeed,rotationRatio,rb,rayDistFront,rayDistBack,intersectionLayers);
-        Vector3 tpLoc = WayPointManager.instance.FindClosestWayPoint(transform.position,this).transform.position;
-        transform.position = new Vector3(tpLoc.x,0,tpLoc.z);
         currentWayPoint = WayPointManager.instance.FindClosestWayPoint(transform.position, this);
         col = GetComponent<BoxCollider>();
     }
@@ -54,5 +52,14 @@ public class Vehicles : MonoBehaviour
         Gizmos.DrawRay(transform.position, transform.forward * rayDistFront);
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position, -transform.forward * rayDistBack);
+        if (stateMachine == null) return;
+        if (stateMachine.currentState == stateMachine.intersectingState)
+        {
+            stateMachine.currentState.OnDrawGizmos();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        stateMachine.currentState.OnTriggerEnter(other);
     }
 }

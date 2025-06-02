@@ -55,8 +55,6 @@ public class Accelerating : States
         {
             if (rayHit.collider.CompareTag("Intersection"))
             {
-                vehicle.intersection = rayHit.collider.GetComponent<Intersection>();
-                stateMachine.ChangeState(stateMachine.intersectingState);
                 return;
             }
             stateMachine.ChangeState(stateMachine.parkState);
@@ -65,8 +63,18 @@ public class Accelerating : States
         if ((nextWayPoint.position - vehicle.transform.position).magnitude < 0.2f)
         {
             currentWayPoint = WayPointManager.instance.GetWayPoint(nextWayPoint,vehicle);
+            vehicle.currentWayPoint = currentWayPoint;
             nextWayPoint = currentWayPoint.Nextpoint;
         }
 
+    }
+    public override void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Intersection"))
+        {
+            Debug.Log("Accelerating: Entered Intersection");
+            vehicle.intersection = other.GetComponent<Intersection>();
+            stateMachine.ChangeState(stateMachine.intersectingState);
+        }
     }
 }

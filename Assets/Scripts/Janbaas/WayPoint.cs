@@ -21,8 +21,4 @@ public class WayPoint : MonoBehaviour
         get { return rightPoint; }
         set { rightPoint = value; }
     }
-    public void Start()
-    {
-        WayPointManager.instance.AddToList(this); 
-    }
 }
