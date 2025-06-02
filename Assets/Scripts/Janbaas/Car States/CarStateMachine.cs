@@ -13,7 +13,7 @@ public class CarStateMachine
     {
         acceleratingState = new Accelerating(this,vehicle, accel, maxSpeed, rotRatio, rb,rayDistfront,intersectionMask);
         parkState = new Park(this,vehicle, rb,rayDistfront);
-        intersectingState = new Intersecting(this, vehicle, rotRatio,maxSpeed,rb,rayDistfront,accel);
+        intersectingState = new Intersecting(this, vehicle,maxSpeed,rb,rayDistfront,accel,intersectionMask);
         Initialize();
     }
     private void Initialize()
@@ -41,6 +41,7 @@ public class CarStateMachine
         {
             currentState.ExitState();
         }
+        Debug.Log("Changing to "+newState);
         currentState = newState;
         currentState.EnterState();
     }

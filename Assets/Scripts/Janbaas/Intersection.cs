@@ -5,6 +5,7 @@ public class Intersection : MonoBehaviour
 {
     Array directions = Enum.GetValues(typeof(IntersectionDirection));
     [SerializeField] IntersectionType _intersectionType = IntersectionType.Way3;
+    
     public IntersectionType intersectionType
     {
         get => _intersectionType;
@@ -35,10 +36,10 @@ public class Intersection : MonoBehaviour
         switch (intersectionType)
         {
             case IntersectionType.Way3:
-                index = UnityEngine.Random.Range(0, 3);
+                index = UnityEngine.Random.Range(0, 2);
                 break;
             case IntersectionType.Way4:
-                index = UnityEngine.Random.Range(0, 4);
+                index = UnityEngine.Random.Range(0, 3);
                 break;
             case IntersectionType.UTurn:
                 index = 3; // U-turn is always backward
@@ -60,5 +61,4 @@ public enum IntersectionDirection
     Left,
     Right,
     Forward,
-    Backward
 }

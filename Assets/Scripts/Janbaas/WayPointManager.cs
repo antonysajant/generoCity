@@ -23,14 +23,15 @@ public class WayPointManager : MonoBehaviour
         get { return wayPoints; }
         set { wayPoints = value; }
     }
-    public WayPoint FindClosestWayPoint(Vector3 position)
+    public WayPoint FindClosestWayPoint(Vector3 position,Vehicles vehicles)
     {
         WayPoint closestWayPoint = null;
         float distance = float.MaxValue;
         foreach (var wayPoint in wayPoints)
         {
             float currentDistance = Vector3.Distance(position, wayPoint.transform.position);
-            if (currentDistance < distance)
+            bool flag = wayPoint.leftLane == vehicles.LeftLane;
+            if (currentDistance < distance&&flag)
             {
                 distance = currentDistance;
                 closestWayPoint = wayPoint;
@@ -42,6 +43,30 @@ public class WayPointManager : MonoBehaviour
     {
         if (wayPoints.Contains(wayPoint)) return;
         wayPoints.Add(wayPoint);
+    }
+    public WayPoint GetWayPoint(Transform way,Vehicles vehicle)
+    {
+        return FindClosestWayPoint(way.position,vehicle); 
+    }
+    private void OnDrawGizmos()
+    {
+        
+        foreach(var wayPoint in WayPoints)
+        {
+            Gizmos.color = Color.black;
+            if (wayPoint.Nextpoint == null) continue;
+            Gizmos.DrawLine(wayPoint.transform.position, wayPoint.Nextpoint.position);
+            if(wayPoint.Leftpoint != null)
+            {
+                Gizmos.color = Color.blue;
+                Gizmos.DrawLine(wayPoint.transform.position, wayPoint.Leftpoint.position);
+            }
+            if (wayPoint.Rightpoint != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(wayPoint.transform.position, wayPoint.Rightpoint.position);
+            }
+        }
     }
 
 }
