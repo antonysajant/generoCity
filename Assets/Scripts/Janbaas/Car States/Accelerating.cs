@@ -11,6 +11,7 @@ public class Accelerating : States
     private float velocity;
     private float rayDistFront;
     private LayerMask _intersectionMask;
+    private WayPoint nextWayPoint;
 
     public Accelerating(CarStateMachine stateMachine,Vehicles vehicle, float accel, float maxSpeed, float rotRatio, Rigidbody rb,float rayDistFront,LayerMask _intersectionMask)
     {

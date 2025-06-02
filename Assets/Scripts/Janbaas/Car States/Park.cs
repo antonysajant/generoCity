@@ -36,6 +36,11 @@ public class Park : States
 
     public override void Update()
     {
-        // Could add logic to leave park state if needed
+        var hit = Physics.Raycast(vehicle.transform.position, vehicle.transform.forward, rayDistFront);
+        if (!hit)
+        {
+            carStateMachine.ChangeState(carStateMachine.acceleratingState);
+        }
+
     }
 }
