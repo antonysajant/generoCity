@@ -35,6 +35,7 @@ public class Vehicles : MonoBehaviour
         stateMachine = new CarStateMachine(this,acceleration,maxSpeed,maxBackwardSpeed,rotationRatio,rb,rayDistFront,rayDistBack,intersectionLayers);
         currentWayPoint = WayPointManager.instance.FindClosestWayPoint(transform.position, this);
         col = GetComponent<BoxCollider>();
+        Time.timeScale = 0.5f;
     }
 
     private void Update()

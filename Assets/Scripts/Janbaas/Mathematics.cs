@@ -73,4 +73,11 @@ public static class Mathematics
 
         return midpoint + offsetDirection * offset;
     }
+    public static Vector3 CalculateLeftTurnAnchor(Vector3 start,Vector3 end,Vector3 left,Vector3 down)
+    {
+        float distance = Vector3.Distance(start, end);
+        float radius = distance / (90f * Mathf.Deg2Rad); // 1.414 is approximately sqrt(2)
+        Vector3 anchorpoint = start + radius * left.normalized + end + radius * down.normalized;
+        return anchorpoint;
+    }
 }

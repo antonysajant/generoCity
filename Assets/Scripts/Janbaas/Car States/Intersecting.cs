@@ -56,7 +56,6 @@ public class Intersecting : States
 
         // Find the intersection waypoint
         currentWayPoint = _vehicle.currentWayPoint;
-        WayPoint startPoint = currentWayPoint;
         _initialWayPoint = currentWayPoint;
 
         if (currentWayPoint == null)
@@ -108,7 +107,7 @@ public class Intersecting : States
             case IntersectionDirection.Left:
                 nextWayPoint = currentWayPoint.Leftpoint;
                 nextWayPointComponent = GetWayPointComponent(nextWayPoint);
-                _anchorPoint = Mathematics.CalculateSimpleIntersectionAnchor(startPoint.transform.position,nextWayPoint.position,direction);
+                _anchorPoint = Mathematics.CalculateLeftTurnAnchor(_vehicle.transform.position,nextWayPoint.position,_vehicle.transform.right*-1f,_vehicle.transform.forward*-1f);
                 _finalAngle = -90f;
                 break;
 
@@ -138,7 +137,7 @@ public class Intersecting : States
         if (direction != IntersectionDirection.Forward)
         {
             _startToAnchor = _vehicle.transform.position - _anchorPoint;
-            _radius = _startToAnchor.magnitude;
+            _radius = _startToAnchor.magnitude/1.414f;
 
             if (_radius < 0.1f) // Prevent division by zero
             {

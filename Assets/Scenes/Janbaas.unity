@@ -214,7 +214,7 @@ MonoBehaviour:
   nextPoint: {fileID: 707590360}
   leftPoint: {fileID: 0}
   rightPoint: {fileID: 0}
-  leftLane: 0
+  leftLane: 1
 --- !u!4 &59522814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7d6269e8590047c488911a4b2a4c55de, type: 3}
@@ -356,6 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 205853979}
+  - component: {fileID: 205853980}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -378,6 +379,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &205853980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205853978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bc81d6d6c33ff468f9ff4b0519d756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &219497837
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +854,7 @@ Transform:
   m_GameObject: {fileID: 552347006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5587616, y: 0, z: -12.36}
+  m_LocalPosition: {x: -2.5587616, y: 0, z: -12.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1058,6 +1071,10 @@ PrefabInstance:
     - target: {fileID: 659104766180376287, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: m_Name
       value: Sports Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208543659488826036, guid: 351654b9de66528438249ceb467f1275, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5796359291788415704, guid: 351654b9de66528438249ceb467f1275, type: 3}
       propertyPath: rayDistFront
@@ -1546,11 +1563,11 @@ Transform:
   m_GameObject: {fileID: 971231692}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 198, y: 0.19719362, z: 57.5}
+  m_LocalPosition: {x: -5.3087616, y: 0, z: -10.14109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1094981563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &971231694
 MonoBehaviour:
@@ -1982,6 +1999,7 @@ Transform:
   - {fileID: 576095359}
   - {fileID: 1933443663}
   - {fileID: 1555322975}
+  - {fileID: 971231693}
   m_Father: {fileID: 802101155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1112357136
@@ -4397,5 +4415,4 @@ SceneRoots:
   - {fileID: 802101155}
   - {fileID: 710131558}
   - {fileID: 1083146917}
-  - {fileID: 971231693}
   - {fileID: 205853979}
