@@ -107,7 +107,7 @@ public class Intersecting : States
             case IntersectionDirection.Left:
                 nextWayPoint = currentWayPoint.Leftpoint;
                 nextWayPointComponent = GetWayPointComponent(nextWayPoint);
-                _anchorPoint = Mathematics.CalculateLeftTurnAnchor(_vehicle.transform.position,nextWayPoint.position,_vehicle.transform.right*-1f,_vehicle.transform.forward*-1f);
+                _anchorPoint = Mathematics.CalculateLeftTurnAnchor(_vehicle.transform.position,nextWayPoint.position);
                 _finalAngle = -90f;
                 break;
 

@@ -73,11 +73,17 @@ public static class Mathematics
 
         return midpoint + offsetDirection * offset;
     }
-    public static Vector3 CalculateLeftTurnAnchor(Vector3 start,Vector3 end,Vector3 left,Vector3 down)
+    public static Vector3 CalculateLeftTurnAnchor(Vector3 start,Vector3 end)
     {
-        float distance = Vector3.Distance(start, end);
-        float radius = distance / (90f * Mathf.Deg2Rad); // 1.414 is approximately sqrt(2)
-        Vector3 anchorpoint = start + radius * left.normalized + end + radius * down.normalized;
-        return anchorpoint;
+        float x = end.x - start.x;
+        float z = end.z - start.z;
+        float chordLength = Vector3.Distance(start, end);
+        float radius = chordLength / (2 * Mathf.Sin(45));
+        Vector3 midPoint = new Vector3((end.x + start.x) / 2, end.y, (end.z + start.z) / 2);
+        float norm = Mathf.Sqrt(x * x + z * z);
+        Vector3 perpendicular = new Vector3(-z / norm, 0, x / norm);
+        float distanceToCenter = radius * Mathf.Cos(45);
+        Vector3 anchorPoint = midPoint + perpendicular * distanceToCenter;
+        return anchorPoint;
     }
 }
